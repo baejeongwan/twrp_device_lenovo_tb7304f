@@ -1,0 +1,7 @@
+#name: Build on push
+#run-name: Automatically building now!
+#on: [push]
+#jobs:
+#  Build-It:
+#    runs-on: ubuntu-latest
+#    steps:
