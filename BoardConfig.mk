@@ -5,7 +5,7 @@
 # SPDX-License-Identifier: Apache-2.0
 #
 
-DEVICE_PATH := device/lenovo/TB-7304F
+DEVICE_PATH := device/lenovo/TB7304F
 
 # For building with minimal manifest
 ALLOW_MISSING_DEPENDENCIES := true
@@ -43,8 +43,8 @@ BOARD_KERNEL_TAGS_OFFSET := 0x0df88000
 BOARD_MKBOOTIMG_ARGS += --ramdisk_offset $(BOARD_RAMDISK_OFFSET)
 BOARD_MKBOOTIMG_ARGS += --tags_offset $(BOARD_KERNEL_TAGS_OFFSET)
 BOARD_KERNEL_IMAGE_NAME := Image
-TARGET_KERNEL_CONFIG := TB-7304F_defconfig
-TARGET_KERNEL_SOURCE := kernel/lenovo/TB-7304F
+TARGET_KERNEL_CONFIG := TB7304F_defconfig
+TARGET_KERNEL_SOURCE := kernel/lenovo/TB7304F
 
 # Kernel - prebuilt
 TARGET_FORCE_PREBUILT_KERNEL := true
