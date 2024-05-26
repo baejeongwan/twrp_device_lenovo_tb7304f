@@ -58,10 +58,6 @@ endif
 BOARD_MTK_KERNEL_CMDLINE := bootopt=64S3,32N2,64N2 androidboot.selinux=permissive
 BOARD_KERNEL_CMDLINE := bootopt=64S3,32N2,64N2
 
-# This may be device specific
-BOARD_MKBOOTIMG_ARGS := --pagesize 2048 --base 0x40078000 --kernel_offset 0x00008000 --second_offset 0x00e88000 --tags_offset 0x0df88000
-
-
 # Partitions
 BOARD_FLASH_BLOCK_SIZE := 131072 # (BOARD_KERNEL_PAGESIZE * 64)
 # The real size is 16777216, but doing workaround to make it build.
