@@ -54,6 +54,14 @@ ifeq ($(TARGET_FORCE_PREBUILT_KERNEL),true)
 TARGET_PREBUILT_KERNEL := $(DEVICE_PATH)/prebuilt/kernel
 endif
 
+# Those were found in https://github.com/LINGJP/android_device_bbkedu_twrp/blob/master/H8SM/H8SM/BoardConfig.mk
+BOARD_MTK_KERNEL_CMDLINE := bootopt=64S3,32N2,64N2 androidboot.selinux=permissive
+BOARD_KERNEL_CMDLINE := bootopt=64S3,32N2,64N2
+
+# This may be device specific
+BOARD_MKBOOTIMG_ARGS := --pagesize 2048 --base 0x40078000 --kernel_offset 0x00008000 --second_offset 0x00e88000 --tags_offset 0x0df88000
+
+
 # Partitions
 BOARD_FLASH_BLOCK_SIZE := 131072 # (BOARD_KERNEL_PAGESIZE * 64)
 # The real size is 16777216, but doing workaround to make it build.
@@ -87,10 +95,15 @@ TW_SCREEN_BLANK_ON_BOOT := true
 TW_INPUT_BLACKLIST := "hbtp_vm"
 TW_USE_TOOLBOX := true
 TW_EXCLUDE_TWRPAPP := true
-TW_INCLUDE_CRYPTO := false
+TW_INCLUDE_CRYPTO := true
 TW_EXCLUDE_TZDATA := true
 TW_EXCLUDE_LPTOOLS := true
 TW_EXCLUDE_LPDUMP := true
 TW_EXCLUDE_NANO := true
 TW_EXCLUDE_BASH := true
 TW_EXCLUDE_SUPERSU := true
+
+ARCH_ARM_HAVE_NEON := true
+TW_FLASH_FROM_STORAGE := true
+TW_NEW_ION_HEAP := true
+TWHAVE_SELINUX := true
